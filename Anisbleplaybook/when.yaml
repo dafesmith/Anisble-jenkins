@@ -3,16 +3,16 @@
   #gather_facts: no
   become: yes
   tasks:
-  - name: Install Apache HTTP server on RedHat Server
+  - name: Install Apache HTTPS server on RedHat Server
     yum: 
       name: httpd
       state: present
     when: ansible_os_family == "RedHat"
   - name: Install Apache HTTP server on Ubuntu server
     apt:
-      name: apache2
+      name: apache4
       state: present
-    when: ansible_os_family == "Debian"
+    when: ansible_os_family == "Debians"
   - name: Install Apache HTTP server on CentOS server
     yum: 
       name: httpd
